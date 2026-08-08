@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<script src="./runtime/react.production.min.js"></script>
+<script src="./runtime/react-dom.production.min.js"></script>
+<script src="./runtime/babel.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @font-face { font-family: Cairo; src: url("ref/fonts/Cairo-400.ttf") format("truetype"); font-weight: 400 500; font-display: swap; }
+  @font-face { font-family: Cairo; src: url("ref/fonts/Cairo-600.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+  @font-face { font-family: Cairo; src: url("ref/fonts/Cairo-700.ttf") format("truetype"); font-weight: 700 800; font-display: swap; }
+  body { margin: 0; background: #DDE5E9; }
+  a { color: #007E84; }
+  a:hover { color: #173C55; }
+  [dir="rtl"] * { letter-spacing: normal !important; }
+</style>
+</helmet>
+
+<div data-host="1" style="min-height: 100vh; display: grid; place-items: center; padding: 28px; background: #DDE5E9; font-family: 'Roboto Condensed','Arial Narrow',Arial,sans-serif;">
+<div data-fit="1" style="position:relative;">
+<div data-stage="1" dir="ltr" style="width:1672px;height:941px;position:relative;transform-origin:top left;overflow:hidden;border-radius:14px;box-shadow:0 24px 60px rgba(16,43,58,.28);color:#173C55;">
+
+  <img src="ref/map-base.png" alt="" style="position: absolute; inset: 0px; width: 1672px; height: 941px; object-fit: cover; object-position: calc(50% - 3px) calc(50% + 2px); display: block; left: 0px; top: 0px">
+
+  <sc-if value="{{ showGrid }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;pointer-events:none;z-index:60;background:repeating-linear-gradient(90deg,rgba(7,155,155,.20) 0 1px,transparent 1px 28px),repeating-linear-gradient(0deg,rgba(7,155,155,.20) 0 1px,transparent 1px 28px);"></div>
+    <div style="position:absolute;left:28px;top:28px;width:1616px;height:885px;pointer-events:none;z-index:61;border:1px solid rgba(240,68,56,.55);"></div>
+  </sc-if>
+
+  <div data-mirror="1" style="position:absolute;left:1273px;top:28px;">
+    <img src="ref/shc-logo.png" alt="Saudi Health Council" style="height: 104px; width: 371px; display: block">
+  </div>
+
+  <div data-mirror="1" style="position:absolute;left:28px;top:30px;display:flex;align-items:center;gap:14px;height:70px;">
+    <div style="display:flex;align-items:center;">
+      <img src="ref/shiryan-lockup-master.svg" alt="شريان SHIRYAN" style="height:84px;width:auto;display:block;">
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position:absolute;left:686px;top:44px;z-index:55;display:flex;align-items:center;gap:10px;">
+    <div style="display:flex;align-items:center;gap:9px;background:rgba(255,247,224,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid #E2B23C;border-radius:8px;padding:7px 13px;box-shadow:0 6px 16px rgba(16,43,58,.16);">
+      <span style="width:9px;height:9px;border-radius:50%;background:#E2B23C;display:inline-block;flex:0 0 auto;"></span>
+      <span data-i18n="simulatedData" style="font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#7A5410;">Simulated data</span>
+    </div>
+    <div data-lang-toggle="1" style="display:flex;align-items:center;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:8px;box-shadow:0 6px 16px rgba(16,43,58,.16), inset 0 0 0 1px rgba(255,255,255,.7);overflow:hidden;cursor:pointer;">
+      <div data-lang-en="1" style="font-size:13px;font-weight:800;letter-spacing:.08em;padding:8px 13px;color:#fff;background:#0E7C86;">EN</div>
+      <div data-lang-ar="1" style="font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;padding:8px 13px;color:#3A5568;background:transparent;">ع</div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position: absolute; left: 28px; top: 126px; width: 409px; height: 302px; background: rgba(255,255,255,.78); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-radius: 12px; box-shadow: 0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72); padding: 20px; box-sizing: border-box; display: grid; grid-template-rows: auto auto auto auto 1fr; gap: 0">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 0;padding:13px 20px;background:rgba(14,124,134,.11);border-radius:12px 12px 0 0;">
+      <div data-i18n="patient" style="font-size:20px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#0B3C46;">Patient</div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div data-i18n="demo" style="font-size:12px;font-weight:800;letter-spacing:.07em;color:#2A4A5C;background:rgba(23,60,85,.11);padding:5px 10px;border-radius:6px;">58 · MALE</div>
+        <div data-i18n="stable" style="font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#00696E;background:#E3F4F4;padding:5px 10px;border-radius:6px;">Stable</div>
+      </div>
+    </div>
+    <div style="height:1px;background:#E1E9EC;margin:16px 0 14px;visibility:hidden;"></div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px;">
+      <div data-i18n="ecg" style="font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#3A5568;">12-lead ECG</div>
+      <div data-i18n="ecgUnits" style="font-size:11px;font-weight:500;letter-spacing:.05em;color:#3A5568;" dir="ltr">10 mm/mV &nbsp;·&nbsp; 25 mm/s &nbsp;·&nbsp; AC 50 Hz</div>
+    </div>
+    <div style="border:1px solid #F0DAD7;border-radius:6px;overflow:hidden;background-color:#FFFAF9;background-image:repeating-linear-gradient(0deg,rgba(240,68,56,.13) 0 1px,transparent 1px 14px),repeating-linear-gradient(90deg,rgba(240,68,56,.13) 0 1px,transparent 1px 14px),repeating-linear-gradient(0deg,rgba(240,68,56,.26) 0 1px,transparent 1px 70px),repeating-linear-gradient(90deg,rgba(240,68,56,.26) 0 1px,transparent 1px 70px);">
+      <svg viewBox="0 0 420 154" preserveAspectRatio="none" fill="none" style="display:block;width:100%;height:100%;">
+        <g stroke="#F04438" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+          <path transform="translate(60,0)" d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+          <path transform="translate(120,0)" d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+          <path transform="translate(180,0)" d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+          <path transform="translate(240,0)" d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+          <path transform="translate(300,0)" d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+          <path transform="translate(360,0)" d="M0,96 H8 L12,84 L16,96 H22 L25,104 L28,32 L31,122 L34,96 H43 L48,78 L53,96 H60"></path>
+        </g>
+      </svg>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr 1px 1fr;align-items:end;align-self:end;margin-top:18px;">
+      <div style="display:grid;gap:5px;">
+        <div style="display:flex;align-items:center;gap:6px;"><span data-i18n="hr" style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3A5568;">HR</span><span style="font-size:9px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;color:#C4322A;background:#FDECEA;padding:2px 4px;border-radius:3px;" data-i18n="stelev">ST-elev flag</span></div>
+        <div style="font-size:26px;font-weight:800;line-height:1;color:#C4322A;" dir="ltr">112<span data-i18n="bpm" style="font-size:13px;font-weight:700;margin-left:4px;">bpm</span></div>
+      </div>
+      <div style="background:#E1E9EC;height:36px;align-self:end;"></div>
+      <div style="display:grid;gap:5px;padding-left:16px;">
+        <div data-i18n="bp" style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3A5568;">BP</div>
+        <div style="font-size:26px;font-weight:800;line-height:1;" dir="ltr">142/90</div>
+      </div>
+      <div style="background:#E1E9EC;height:36px;align-self:end;"></div>
+      <div style="display:grid;gap:5px;padding-left:16px;">
+        <div data-i18n="spo2" style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3A5568;">SpO₂</div>
+        <div style="font-size:26px;font-weight:800;line-height:1;" dir="ltr">96%</div>
+      </div>
+      <div style="background:#E1E9EC;height:36px;align-self:end;"></div>
+      <div style="display:grid;gap:5px;padding-left:16px;">
+        <div data-i18n="onset" style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3A5568;">Onset</div>
+        <div style="font-size:26px;font-weight:800;line-height:1;" dir="ltr">18<span data-i18n="min" style="font-size:13px;font-weight:700;margin-left:4px;">min</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position: absolute; left: 28px; top: 467px; width: 409px; height: 360px; background: rgba(255,255,255,.78); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-radius: 12px; box-shadow: 0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72); padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 0;padding:10px 20px;background:rgba(14,124,134,.11);border-radius:12px 12px 0 0;">
+      <div data-i18n="ttp" style="font-size:20px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#0B3C46;">Time to PCI</div>
+      <div data-i18n="ontarget" style="font-size:12px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#00696E;background:#E3F4F4;padding:5px 10px;border-radius:6px;">On target</div>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;color:#0E7C86;margin-top:8px;">
+      <div data-pci-value="1" style="font-size:132px;font-weight:800;line-height:.78;letter-spacing:-0.05em;">51</div><div data-i18n="minUpper" style="font-size:24px;font-weight:800;letter-spacing:.01em;">MIN</div>
+    </div>
+    <div data-i18n="vstarget" style="text-align:center;margin-top:6px;font-size:16px;font-weight:700;color:#3A5568;">vs target 90 min</div>
+    <div style="margin-top:12px;display:grid;gap:8px;">
+      <div data-i18n="centerA" style="font-size: 28px; font-weight: 800; letter-spacing: .01em; color: #0B3C46; text-align: center">PCI Center A</div>
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;color:#0B3C46;" dir="ltr">
+        <div style="font-size:30px;font-weight:800;line-height:1;">18.7<span data-i18n="km" style="font-size:16px;font-weight:700;margin-left:5px;">km</span></div>
+        <div style="font-size:30px;font-weight:800;line-height:1;">21:44<span data-i18n="eta" style="font-size:16px;font-weight:700;margin-left:7px;color:#3A5568;">ETA</span></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px;margin-top:auto;">
+      <div style="flex:1;display:flex;align-items:center;gap:7px;background:#E3F4F4;border-radius:6px;padding:5px 10px;">
+        <span style="width:15px;height:15px;border-radius:50%;background:#079B9B;display:inline-block;flex:0 0 auto;"></span>
+        <span data-i18n="accepted" style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#00696E;">Temporarily reserved</span>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;gap:7px;background:#E3F4F4;border-radius:6px;padding:5px 10px;">
+        <span style="width:15px;height:15px;border-radius:50%;background:#079B9B;display:inline-block;flex:0 0 auto;"></span>
+        <span data-i18n="cathready" style="font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#00696E;">Cath lab ready</span>
+      </div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position: absolute; left: 1257px; top: 150px; width: 387px; height: 486px; background: rgba(255,255,255,.78); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-radius: 12px; box-shadow: 0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72); padding: 20px; box-sizing: border-box; display: flex; flex-direction: column">
+    <div style="display:flex;align-items:center;margin:-20px -20px 0;padding:10px 20px;background:rgba(14,124,134,.11);border-radius:12px 12px 0 0;">
+      <div data-i18n="timeline" style="font-size:20px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#0B3C46;">Live case timeline</div>
+    </div>
+    <div style="position:relative;flex:1;display:grid;grid-template-rows:repeat(6,1fr);align-items:center;padding-top:8px;">
+      <div data-rail="1" style="position:absolute;left:12px;top:38px;bottom:34px;width:2px;background:#DCE5E8;"></div>
+      <div style="position:relative;display:grid;grid-template-columns:26px 1fr auto;column-gap:14px;align-items:start;">
+        <div style="width:26px;height:26px;border-radius:50%;background:#C4322A;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;">1</div>
+        <div style="display:grid;gap:3px;"><div data-i18n="t1" style="font-size:15px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;">Case opened</div><div data-i18n="t1s" style="font-size:12px;font-weight:400;color:#3A5568;line-height:1.3;">Ambulance Agent: ECG, location and time</div></div>
+        <div style="font-size:13px;font-weight:700;color:#3A5568;font-variant-numeric:tabular-nums;" dir="ltr">21:42:11</div>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:26px 1fr auto;column-gap:14px;align-items:start;">
+        <div style="width:26px;height:26px;border-radius:50%;background:#C4322A;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;">2</div>
+        <div style="display:grid;gap:3px;"><div data-i18n="t2" style="font-size:15px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;">Readiness published</div><div data-i18n="t2s" style="font-size:12px;font-weight:400;color:#3A5568;line-height:1.3;">Hospital Agents: state and time to ready</div></div>
+        <div style="font-size:13px;font-weight:700;color:#3A5568;font-variant-numeric:tabular-nums;" dir="ltr">21:42:28</div>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:26px 1fr auto;column-gap:14px;align-items:start;">
+        <div style="width:26px;height:26px;border-radius:50%;background:#00696E;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;">3</div>
+        <div style="display:grid;gap:3px;"><div data-i18n="t3" style="font-size:15px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;">Guardrails applied</div><div data-i18n="t3s" style="font-size:12px;font-weight:400;color:#3A5568;line-height:1.3;">Eligibility, capability and data freshness</div></div>
+        <div style="font-size:13px;font-weight:700;color:#3A5568;font-variant-numeric:tabular-nums;" dir="ltr">21:42:47</div>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:26px 1fr auto;column-gap:14px;align-items:start;">
+        <div style="width:26px;height:26px;border-radius:50%;background:#00696E;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;">4</div>
+        <div style="display:grid;gap:3px;"><div data-i18n="t4" style="font-size:15px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#00696E;">Selected and reserved</div><div data-i18n="t4s" style="font-size:12px;font-weight:400;color:#3A5568;line-height:1.3;">Orchestrator: earliest expected treatment start</div></div>
+        <div style="font-size:13px;font-weight:700;color:#3A5568;font-variant-numeric:tabular-nums;" dir="ltr">21:43:05</div>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:26px 1fr auto;column-gap:14px;align-items:start;">
+        <div style="width:26px;height:26px;border-radius:50%;background:#00696E;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;">5</div>
+        <div style="display:grid;gap:3px;"><div data-i18n="t5" style="font-size:15px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;">Route and preparation</div><div data-i18n="t5s" style="font-size:12px;font-weight:400;color:#3A5568;line-height:1.3;">Ambulance routed; Cath Lab prepares in parallel</div></div>
+        <div style="font-size:13px;font-weight:700;color:#3A5568;font-variant-numeric:tabular-nums;" dir="ltr">21:43:18</div>
+      </div>
+      <div style="position:relative;display:grid;grid-template-columns:26px 1fr auto;column-gap:14px;align-items:start;">
+        <div style="width:26px;height:26px;border-radius:50%;background:#00696E;color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;">6</div>
+        <div style="display:grid;gap:3px;"><div data-i18n="t6" style="font-size:15px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;">Monitoring and assurance</div><div data-i18n="t6s" style="font-size:12px;font-weight:400;color:#3A5568;line-height:1.3;">Recalculation and complete decision record</div></div>
+        <div style="font-size:13px;font-weight:700;color:#3A5568;font-variant-numeric:tabular-nums;" dir="ltr">21:43:36</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position: absolute; left: 1257px; top: 659px; width: 387px; height: 109px; background: rgba(255,255,255,.78); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-radius: 12px; box-shadow: 0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72); padding: 18px 20px; box-sizing: border-box; display: grid; place-content: center; gap: 16px">
+    <div style="display:grid;grid-template-columns:68px auto;align-items:center;column-gap:16px;">
+      <div style="height:4px;border-radius:999px;background:#079B9B;"></div>
+      <div data-i18n="recommended" style="font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#173C55;">Selected route</div>
+    </div>
+    <div style="display:grid;grid-template-columns:68px auto;align-items:center;column-gap:16px;">
+      <div style="height:3px;border-radius:999px;background:repeating-linear-gradient(90deg,#F04438 0 9px,transparent 9px 16px);"></div>
+      <div style="font-size:16px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#C4322A;"><span data-i18n="congested">Congested</span> <span data-i18n="plus14" style="color:#3A5568;">+14 min</span></div>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 1054px; top: 145px; width: 196px; background: rgba(255,255,255,.78); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-radius: 10px; box-shadow: 0 8px 22px rgba(16,43,58,.24), inset 0 0 0 1px rgba(255,255,255,.72); border: 2px solid #079B9B; padding: 9px 11px; box-sizing: border-box; display: grid; grid-template-columns: 30px 1fr; column-gap: 10px; align-items: center">
+    <img src="icons/n/hospital.png" alt="Hospital" style="width:30px;height:30px;display:block;">
+    <div style="display:grid;gap:3px;min-width:0;">
+      <div data-i18n="centerA" style="font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;line-height:1.15;">PCI Center A</div>
+      <div data-i18n="cathready" style="font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#007E84;">Cath lab ready</div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:605px;top:261px;width:196px;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-radius:10px;box-shadow:0 8px 22px rgba(16,43,58,.24), inset 0 0 0 1px rgba(255,255,255,.72);padding:9px 11px;box-sizing:border-box;display:grid;grid-template-columns:30px 1fr;column-gap:10px;align-items:center;">
+    <img src="icons/n/hospital.png" alt="Hospital" style="width:30px;height:30px;display:block;">
+    <div style="display:grid;gap:3px;min-width:0;">
+      <div data-i18n="centerB" style="font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;line-height:1.15;">PCI Center B</div>
+      <div data-i18n="d242" style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#3A5568;">24.2 km</div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:932px;top:516px;width:196px;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-radius:10px;box-shadow:0 8px 22px rgba(16,43,58,.24), inset 0 0 0 1px rgba(255,255,255,.72);padding:9px 11px;box-sizing:border-box;display:grid;grid-template-columns:30px 1fr;column-gap:10px;align-items:center;">
+    <img src="icons/n/hospital.png" alt="Hospital" style="width:30px;height:30px;display:block;">
+    <div style="display:grid;gap:3px;min-width:0;">
+      <div data-i18n="centerC" style="font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;line-height:1.15;">PCI Center C</div>
+      <div data-i18n="d196" style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#3A5568;">19.6 km</div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:987px;top:718px;width:196px;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-radius:10px;box-shadow:0 8px 22px rgba(16,43,58,.24), inset 0 0 0 1px rgba(255,255,255,.72);padding:9px 11px;box-sizing:border-box;display:grid;grid-template-columns:30px 1fr;column-gap:10px;align-items:center;">
+    <img src="icons/n/hospital.png" alt="Hospital" style="width:30px;height:30px;display:block;">
+    <div style="display:grid;gap:3px;min-width:0;">
+      <div data-i18n="centerD" style="font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;line-height:1.15;">PCI Center D</div>
+      <div data-i18n="d168" style="font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#3A5568;">16.8 km</div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position: absolute; left: 1298px; top: 788px; width: 298px; height: 49px; background: rgba(255,255,255,.78); backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4); border-radius: 10px; box-shadow: 0 6px 18px rgba(16,43,58,.18), inset 0 0 0 1px rgba(255,255,255,.72); display: grid; grid-template-columns: auto 1px 1fr; align-items: center; column-gap: 12px; padding: 0 12px; box-sizing: border-box">
+    <img src="ref/compass-keyed.png" alt="North" style="height:28px;width:auto;display:block;">
+    <div style="background:#DCE5E8;height:16px;"></div>
+    <div style="display:grid;gap:3px;" dir="ltr">
+      <div style="display:flex;height:5px;border:1px solid #4C6476;border-radius:1px;overflow:hidden;"><div style="flex:1;background:#4C6476;"></div><div style="flex:1;"></div><div style="flex:1;background:#4C6476;"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:#3A5568;letter-spacing:.04em;"><span>0</span><span>1</span><span>2</span><span data-i18n="km3">3 KM</span></div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position:absolute;left:28px;top:849px;width:400px;height:72px;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-radius:12px;box-shadow:0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72);display:grid;grid-template-columns:auto 1px 1fr;align-items:center;column-gap:16px;padding:0 18px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="icons/n/alert.png" alt="" style="width:34px;height:34px;display:block;">
+      <div data-i18n="activestemi" style="font-size:15px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#C4322A;line-height:1;">Suspected STEMI</div>
+    </div>
+    <div style="background:#DCE5E8;height:34px;"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;column-gap:10px;">
+      <div style="display:grid;gap:3px;">
+        <div data-i18n="case" style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3A5568;">Case</div>
+        <div style="font-size:13px;font-weight:800;letter-spacing:.02em;" dir="ltr">RYD-2142</div>
+      </div>
+      <div style="display:grid;gap:3px;">
+        <div data-i18n="unit" style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#3A5568;">Unit</div>
+        <div data-i18n="amb24" style="font-size:13px;font-weight:800;letter-spacing:.02em;">Ambulance 24</div>
+      </div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position:absolute;left:466px;top:849px;width:740px;height:72px;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-radius:12px;box-shadow:0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72);display:grid;grid-template-columns:repeat(5,1fr);padding:6px;box-sizing:border-box;">
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:9px;padding-bottom:12px;box-sizing:border-box;">
+      <img src="icons/n/nav-overview.png" alt="" style="width:30px;height:30px;display:block;">
+      <div data-i18n="navOverview" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#27485D;">Overview</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:9px;padding-bottom:12px;box-sizing:border-box;">
+      <img src="icons/n/nav-hospitals.png" alt="" style="width:30px;height:30px;display:block;">
+      <div data-i18n="navHospitals" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#27485D;">Hospitals</div>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1px solid #20A8AA;border-radius:9px;background:#F4FBFB;padding-bottom:12px;box-sizing:border-box;">
+      <img src="icons/n/nav-routes.png" alt="" style="width:30px;height:30px;display:block;">
+      <div data-i18n="navRoutes" style="font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#007E84;">Routes</div>
+      <div style="position:absolute;left:26%;right:26%;bottom:3px;height:3px;border-radius:3px;background:#079B9B;"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:9px;padding-bottom:12px;box-sizing:border-box;">
+      <img src="icons/n/nav-cases.png" alt="" style="width:30px;height:30px;display:block;">
+      <div data-i18n="navCases" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#27485D;">Cases</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:9px;padding-bottom:12px;box-sizing:border-box;">
+      <img src="icons/n/nav-settings.png" alt="" style="width:30px;height:30px;display:block;">
+      <div data-i18n="navSettings" style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#27485D;">Settings</div>
+    </div>
+  </div>
+
+  <div data-mirror="1" style="position:absolute;left:1244px;top:849px;width:400px;height:72px;background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-radius:12px;box-shadow:0 10px 28px rgba(16,43,58,.20), inset 0 0 0 1px rgba(255,255,255,.72);display:grid;grid-template-columns:1fr 1px 1fr 1px 1fr;align-items:center;padding:0 6px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;justify-content:center;gap:9px;">
+      <img src="icons/n/status-shield.png" alt="" style="width:32px;height:32px;display:block;">
+      <div style="display:grid;gap:2px;">
+        <div data-i18n="system" style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#3A5568;line-height:1;">System</div>
+        <div data-i18n="online" style="font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#007E84;line-height:1;">Online</div>
+      </div>
+    </div>
+    <div style="background:#DCE5E8;height:34px;"></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:9px;">
+      <img src="icons/n/status-gps.png" alt="" style="width:32px;height:32px;display:block;">
+      <div style="display:grid;gap:2px;">
+        <div data-i18n="gps" style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#3A5568;line-height:1;">GPS</div>
+        <div data-i18n="strong" style="font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#007E84;line-height:1;">Strong</div>
+      </div>
+    </div>
+    <div style="background:#DCE5E8;height:34px;"></div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:9px;">
+      <img src="icons/n/status-network.png" alt="" style="width:32px;height:32px;display:block;">
+      <div style="display:grid;gap:2px;">
+        <div data-i18n="network" style="font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#3A5568;line-height:1;">Network</div>
+        <div data-i18n="stablef" style="font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#007E84;line-height:1;">Stable</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1672,&quot;height&quot;:941},&quot;showGrid&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;showNotes&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;},&quot;pciSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:132,&quot;min&quot;:96,&quot;max&quot;:168,&quot;step&quot;:2,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+const AR = {
+  simulatedData:'بيانات افتراضية',
+  patient:'المريض', demo:'58 · ذكر', stable:'مستقر',
+  ecg:'تخطيط القلب باثنتي عشرة وصلة', ecgUnits:'١٠ ملم/ملي فولت · ٢٥ ملم/ثانية · ٥٠ هرتز', hr:'النبض', bpm:'ن/د', bp:'ضغط الدم', spo2:'تشبع الأكسجين',
+  onset:'منذ البدء', min:'دقيقة', ttp:'الزمن حتى القسطرة', ontarget:'ضمن المستهدف',
+  minUpper:'دقيقة', projected:'متوقع', vstarget:'مقابل مستهدف 90 دقيقة',
+  destination:'الوجهة', centerA:'مركز القسطرة أ', centerB:'مركز القسطرة ب',
+  centerC:'مركز القسطرة ج', centerD:'مركز القسطرة د',
+  distance:'المسافة', km:'كم', eta:'الوصول المتوقع', accepted:'حجز مؤقت',
+  cathready:'مختبر القسطرة جاهز', timeline:'المسار الزمني للحالة',
+  t1:'فتح الحالة', t1s:'وكيل سيارة الإسعاف: التخطيط والموقع والزمن',
+  t2:'نشر الجاهزية', t2s:'وكيل الجاهزية: الحالة ووقت الاستعداد',
+  t3:'تطبيق الضوابط', t3s:'الأهلية والقدرة وحداثة البيانات',
+  t4:'الاختيار والحجز', t4s:'الوكيل المنسق: أقرب وقت متوقع لبدء العلاج',
+  t5:'التوجيه والتجهيز', t5s:'المسار وتجهيز المختبر بالتوازي',
+  t6:'المتابعة والتوثيق', t6s:'إعادة الحساب وتوثيق القرار',
+  recommended:'المسار المختار', congested:'مزدحم', plus14:'+14 دقيقة',
+  d242:'24.2 كم', d196:'19.6 كم', d168:'16.8 كم', km3:'3 كم',
+  activestemi:'اشتباه ارتفاع المقطع إس تي', stelev:'مؤشر ارتفاع المقطع إس تي', case:'الحالة', unit:'المركبة', amb24:'إسعاف 24',
+  navOverview:'نظرة عامة', navHospitals:'المراكز', navRoutes:'المسارات',
+  navCases:'الحالات', navSettings:'الإعدادات',
+  system:'النظام', online:'متصل', gps:'تحديد الموقع', strong:'قوي',
+  network:'الشبكة', stablef:'مستقرة'
+};
+
+class Component extends DCLogic {
+  state = { lang: (() => {
+    try {
+      const p = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+      return p === 'en' ? 'en' : 'ar';
+    } catch (e) { return 'ar'; }
+  })() };
+
+  componentDidMount() {
+    const host = document.querySelector('[data-host]');
+    const fit = document.querySelector('[data-fit]');
+    const stage = document.querySelector('[data-stage]');
+    if (!host || !fit || !stage) return;
+    this._stage = stage;
+    stage.querySelectorAll('[data-i18n]').forEach(el => {
+      el.dataset.en = el.textContent;
+      el.dataset.tt = el.style.textTransform || '';
+    });
+    stage.querySelectorAll('[data-mirror]').forEach(el => { el.dataset.left0 = String(el.offsetLeft); });
+
+    const tog = stage.querySelector('[data-lang-toggle]');
+    if (tog) tog.addEventListener('click', () => {
+      this.setState(s => ({ lang: s.lang === 'en' ? 'ar' : 'en' }));
+    });
+
+    this._fit = () => {
+      const pad = 56;
+      const w = host.clientWidth - pad;
+      const h = Math.max(window.innerHeight - pad, 480);
+      const k = Math.min(w / 1672, h / 941, 1);
+      fit.style.width = Math.round(1672 * k) + 'px';
+      fit.style.height = Math.round(941 * k) + 'px';
+      stage.style.transform = 'scale(' + k + ')';
+    };
+    this._ro = new ResizeObserver(this._fit);
+    this._ro.observe(host);
+    window.addEventListener('resize', this._fit);
+    this._fit();
+    this._apply();
+  }
+
+  componentDidUpdate() { this._apply(); }
+
+  _apply() {
+    const n = document.querySelector('[data-pci-value]');
+    if (n) n.style.fontSize = (this.props.pciSize ?? 132) + 'px';
+    const stage = this._stage;
+    if (!stage) return;
+    const ar = this.state.lang === 'ar';
+    stage.setAttribute('dir', ar ? 'rtl' : 'ltr');
+    stage.style.fontFamily = ar
+      ? "'Cairo','Roboto Condensed',sans-serif"
+      : "'Roboto Condensed','Arial Narrow',Arial,sans-serif";
+
+    stage.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.getAttribute('data-i18n');
+      el.textContent = ar ? (AR[k] ?? el.dataset.en) : el.dataset.en;
+      el.style.textTransform = ar ? 'none' : (el.dataset.tt || '');
+    });
+
+    stage.querySelectorAll('[data-mirror]').forEach(el => {
+      const l0 = Number(el.dataset.left0);
+      const w = el.offsetWidth;
+      el.style.left = (ar ? 1672 - l0 - w : l0) + 'px';
+    });
+
+    const rail = stage.querySelector('[data-rail]');
+    if (rail) { rail.style.left = ar ? 'auto' : '12px'; rail.style.right = ar ? '12px' : 'auto'; }
+
+    const en = stage.querySelector('[data-lang-en]');
+    const arb = stage.querySelector('[data-lang-ar]');
+    if (en && arb) {
+      en.style.background = ar ? 'transparent' : '#0E7C86';
+      en.style.color = ar ? '#3A5568' : '#fff';
+      arb.style.background = ar ? '#0E7C86' : 'transparent';
+      arb.style.color = ar ? '#fff' : '#3A5568';
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._ro) this._ro.disconnect();
+    if (this._fit) window.removeEventListener('resize', this._fit);
+  }
+
+  renderVals() {
+    return {
+      showNotes: this.props.showNotes ?? false,
+      showGrid: this.props.showGrid ?? false
+    };
+  }
+}
+</script>
+</body>
+</html>
